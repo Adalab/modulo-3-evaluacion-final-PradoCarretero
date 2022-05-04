@@ -1,7 +1,7 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
 import getApiData from "../services/moviesApi";
-import MovieList from "./MovieList";
+import MovieSceneList from "./MovieSceneList";
 import Filters from "./Filters";
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
         handleInputYear={handleInputYear}
         filterYears={filterYears}
       />
-      <MovieList moviesData={movieFilters} />
+      <MovieSceneList moviesData={movieFilters} />
     </>
   );
 }
