@@ -10,13 +10,18 @@ function FilterYear(props) {
     return uniqueYears;
   };
   const renderYears = () => {
-    return getYears().map((year) => {
-      return <option>{year}</option>;
+    return getYears().map((year, index) => {
+      return <option key={index}>{year}</option>;
     });
   };
   return (
     <>
-      <select name="yearselect" onChange={handleYearSelect}>
+      <label htmlFor="yearselect">Filtrar por año</label>
+      <select
+        name="yearselect"
+        onChange={handleYearSelect}
+        value={props.filterYears}
+      >
         <option value="">Todos</option>
         {renderYears()}
       </select>

@@ -1,7 +1,7 @@
 function MovieList(props) {
-  const movieElements = props.moviesData.map((movie, index) => {
+  const movieElements = props.moviesData.map((movie) => {
     return (
-      <li key={index}>
+      <li key={movie.index}>
         <img className="movie__poster" src={movie.poster} alt="" />
         <p>
           {movie.movie} - {movie.year}

@@ -8,6 +8,7 @@ function Filters(props) {
       <FilterYear
         movieFilters={props.movieFilters}
         handleInputYear={props.handleInputYear}
+        filterYears={props.filterYears}
       />
     </form>
   );

@@ -20,11 +20,6 @@ function App() {
   };
 
   const handleInputYear = (value) => {
-    /*   if (filterYears.includes(value)) {
-      const newYears = filterYears.filter((city) => city !== value);
-      setFilterYears(newYears);
-    }
-    setFilterYears([...filterYears, value]); */
     setFilterYears(value);
   };
 
@@ -45,6 +40,7 @@ function App() {
         handleInputName={handleInputName}
         movieFilters={movieFilters}
         handleInputYear={handleInputYear}
+        filterYears={filterYears}
       />
       <MovieList moviesData={movieFilters} />
     </>
