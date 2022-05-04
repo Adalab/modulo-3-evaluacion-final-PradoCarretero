@@ -5,7 +5,10 @@ function Filters(props) {
   return (
     <form>
       <FilterName handleInputName={props.handleInputName} />
-      <FilterYear movieFilters={props.movieFilters} />
+      <FilterYear
+        movieFilters={props.movieFilters}
+        handleInputYear={props.handleInputYear}
+      />
     </form>
   );
 }
