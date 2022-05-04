@@ -18,10 +18,11 @@ function App() {
   const movieFilters = moviesData.filter((movie) => {
     return movie.movie.toLowerCase().includes(searchNameValue.toLowerCase());
   });
+
   return (
     <>
       <h1>Owen Wilson's "wow</h1>
-      <Filters handleInputName={handleInputName} />
+      <Filters handleInputName={handleInputName} movieFilters={movieFilters} />
       <MovieList moviesData={movieFilters} />
     </>
   );
