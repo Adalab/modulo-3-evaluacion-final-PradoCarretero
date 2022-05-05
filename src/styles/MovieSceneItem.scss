@@ -1,15 +1,30 @@
 .movie {
-  &__poster {
-    width: 140px;
-  }
   &__link {
     text-decoration: none;
     font-family: "Rubik", sans-serif;
     color: white;
   }
-  &__text {
-    padding: 0px 5px;
+  &__poster {
+    width: 140px;
   }
+  &__info {
+    justify-content: space-between;
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    @media all and (min-width: 470px) {
+      height: 100px;
+    }
+  }
+  &__icon {
+    color: orangered;
+    align-self: flex-end;
+    padding-top: 30px;
+    @media all and (min-width: 470px) {
+      padding-top: 10px;
+    }
+  }
+
   &__quote {
     color: orangered;
   }
