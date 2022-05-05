@@ -1,5 +1,6 @@
 import "../styles/App.scss";
 import "../styles/core/reset.scss";
+import "../styles/core/mediaqueries.scss";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { matchPath, useLocation } from "react-router";
@@ -8,7 +9,7 @@ import ls from "../services/localStorage";
 import getApiData from "../services/moviesApi";
 
 import MovieSceneList from "./MovieSceneList";
-import Filters from "./Filters";
+import Header from "./Header";
 import MovieSceneDetail from "./MovieSceneDetail";
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
           path="/"
           element={
             <>
-              <Filters
+              <Header
                 handleInputName={handleInputName}
                 movieFilters={movieFilters}
                 handleInputYear={handleInputYear}

@@ -1,0 +1,16 @@
+.movie {
+  &__poster {
+    width: 140px;
+  }
+  &__link {
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    color: white;
+  }
+  &__text {
+    padding: 0px 5px;
+  }
+  &__quote {
+    color: orangered;
+  }
+}
