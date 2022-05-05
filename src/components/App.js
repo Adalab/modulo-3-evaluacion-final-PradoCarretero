@@ -9,8 +9,8 @@ import Filters from "./Filters";
 import MovieSceneDetail from "./MovieSceneDetail";
 
 function App() {
-  const [searchNameValue, setSearchNameValue] = useState("");
   const [moviesData, setMoviesData] = useState([]);
+  const [searchNameValue, setSearchNameValue] = useState("");
   const [filterYears, setFilterYears] = useState("");
 
   useEffect(() => {
@@ -41,7 +41,9 @@ function App() {
   console.log(dataPath);
 
   const movieId = dataPath !== null ? dataPath.params.movieId : null;
-  const movieFound = moviesData.find((item) => item.id === movieId);
+  const movieFound = moviesData.find((movie) => movie.id === parseInt(movieId));
+  console.log(movieFound);
+  console.log(movieId);
 
   return (
     <>

@@ -12,7 +12,7 @@ const getApiData = () => {
           year: movie.year,
           id: index,
           director: movie.director,
-          video: movie.video.audio,
+          audio: movie.audio,
         };
       });
       return dataClean;

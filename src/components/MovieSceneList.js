@@ -3,7 +3,7 @@ import MovieSceneItem from "./MovieSceneItem";
 function MovieSceneList(props) {
   const movieElements = props.moviesData.map((movie) => {
     return (
-      <li key={movie.index}>
+      <li key={movie.id}>
         <MovieSceneItem movie={movie} />
       </li>
     );
