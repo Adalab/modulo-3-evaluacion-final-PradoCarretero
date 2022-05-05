@@ -38,12 +38,9 @@ function App() {
     });
   const { pathname } = useLocation();
   const dataPath = matchPath("/movie/:movieId", pathname);
-  console.log(dataPath);
 
   const movieId = dataPath !== null ? dataPath.params.movieId : null;
   const movieFound = moviesData.find((movie) => movie.id === parseInt(movieId));
-  console.log(movieFound);
-  console.log(movieId);
 
   return (
     <>
@@ -59,7 +56,11 @@ function App() {
                 handleInputYear={handleInputYear}
                 filterYears={filterYears}
               />
-              <MovieSceneList moviesData={movieFilters} />
+              <MovieSceneList
+                moviesData={movieFilters}
+                searchNameValue={searchNameValue}
+                filterYears={filterYears}
+              />
             </>
           }
         />
