@@ -37,4 +37,15 @@
     text-decoration: none;
     color: black;
   }
+  &__link {
+    align-self: flex-start;
+    padding-left: 20px;
+  }
+  &__icon {
+    color: orangered;
+
+    &:hover {
+      color: white;
+    }
+  }
 }

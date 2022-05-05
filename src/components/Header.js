@@ -7,7 +7,7 @@ function Header(props) {
     <header className="header">
       <div className="header__hero">
         <img src={logo} className="header__logo" alt="Logo owen wilson's wow" />
-        {/* <div className="header__content"> */}
+
         <h1 class="header__title">owen wilson's WOW</h1>
       </div>
       <form className="header__filters">

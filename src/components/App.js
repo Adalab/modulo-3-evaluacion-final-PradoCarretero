@@ -11,6 +11,7 @@ import getApiData from "../services/moviesApi";
 import MovieSceneList from "./MovieSceneList";
 import Header from "./Header";
 import MovieSceneDetail from "./MovieSceneDetail";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   const [moviesData, setMoviesData] = useState(ls.get("moviesData", []));
@@ -82,6 +83,7 @@ function App() {
           path="/movie/:movieId"
           element={<MovieSceneDetail movie={movieFound} />}
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );
