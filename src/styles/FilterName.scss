@@ -1,0 +1,12 @@
+.input__name {
+  width: 100%;
+  margin-top: 7px;
+  height: 43px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}

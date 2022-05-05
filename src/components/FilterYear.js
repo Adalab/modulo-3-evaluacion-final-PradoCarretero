@@ -1,3 +1,4 @@
+import "../styles/FilterYear.scss";
 function FilterYear(props) {
   const handleYearSelect = (ev) => {
     props.handleInputYear(ev.target.value);
@@ -16,13 +17,13 @@ function FilterYear(props) {
   };
   return (
     <>
-      <label htmlFor="yearselect">Filtrar por año</label>
       <select
+        className="year__select"
         name="yearselect"
         onChange={handleYearSelect}
         value={props.filterYears}
       >
-        <option value="">Todos</option>
+        <option value="">Año</option>
         {renderYears()}
       </select>
     </>

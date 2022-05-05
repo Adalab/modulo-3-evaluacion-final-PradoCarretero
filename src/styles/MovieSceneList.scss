@@ -1,0 +1,15 @@
+.list {
+  &__wrapper {
+  }
+  &__ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20vw 0px 20vw;
+    padding-top: 40px;
+  }
+  &__item {
+    width: 140px;
+    padding-bottom: 40px;
+  }
+}

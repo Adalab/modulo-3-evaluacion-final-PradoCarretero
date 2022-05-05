@@ -1,7 +1,4 @@
 function MovieSceneDetail(props) {
-  console.log("im in details");
-  console.log(props);
-  console.log(props.movie.id);
   return (
     <section key={props.movie.index}>
       <img className="movie__poster" src={props.movie.poster} alt="" />
@@ -9,7 +6,7 @@ function MovieSceneDetail(props) {
       <p>Año: {props.movie.year}</p>
       <p>Frase: {props.movie.quote}</p>
       <p>Director: {props.movie.director}</p>
-      <a href={props.movie.audio} target="_blank">
+      <a href={props.movie.audio} target="_blank" rel="noreferrer">
         Escucha la frase
       </a>
     </section>

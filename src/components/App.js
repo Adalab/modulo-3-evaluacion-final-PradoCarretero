@@ -1,23 +1,36 @@
 import "../styles/App.scss";
+import "../styles/core/reset.scss";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { matchPath, useLocation } from "react-router";
 
+import ls from "../services/localStorage";
 import getApiData from "../services/moviesApi";
+
 import MovieSceneList from "./MovieSceneList";
 import Filters from "./Filters";
 import MovieSceneDetail from "./MovieSceneDetail";
 
 function App() {
-  const [moviesData, setMoviesData] = useState([]);
-  const [searchNameValue, setSearchNameValue] = useState("");
-  const [filterYears, setFilterYears] = useState("");
+  const [moviesData, setMoviesData] = useState(ls.get("moviesData", []));
+  const [searchNameValue, setSearchNameValue] = useState(
+    ls.get("searchNameValue", "")
+  );
+  const [filterYears, setFilterYears] = useState(ls.get("filterYears", ""));
 
   useEffect(() => {
-    getApiData().then((dataApi) => {
-      setMoviesData(dataApi);
-    });
+    if (moviesData.length === 0) {
+      getApiData().then((dataApi) => {
+        setMoviesData(dataApi);
+      });
+    }
   }, []);
+
+  useEffect(() => {
+    ls.set("moviesData", moviesData);
+    ls.set("filterYears", filterYears);
+    ls.set("searchNameValue", searchNameValue);
+  }, [moviesData, filterYears, searchNameValue]);
 
   const handleInputName = (value) => {
     setSearchNameValue(value);
@@ -44,7 +57,6 @@ function App() {
 
   return (
     <>
-      <h1>Owen Wilson's "wow</h1>
       <Routes>
         <Route
           path="/"
@@ -55,6 +67,7 @@ function App() {
                 movieFilters={movieFilters}
                 handleInputYear={handleInputYear}
                 filterYears={filterYears}
+                searchNameValue={searchNameValue}
               />
               <MovieSceneList
                 moviesData={movieFilters}
