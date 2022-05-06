@@ -27,6 +27,19 @@ function App() {
       });
     }
   }, []);
+  useEffect(() => {
+    moviesData.sort(function (a, b) {
+      const movieA = a.movie.toUpperCase();
+      const movieB = b.movie.toUpperCase();
+      if (movieA < movieB) {
+        return -1;
+      }
+      if (movieA > movieB) {
+        return 1;
+      }
+      return 0;
+    });
+  });
 
   useEffect(() => {
     ls.set("moviesData", moviesData);
@@ -51,6 +64,7 @@ function App() {
         ? true
         : parseInt(movie.year) === parseInt(filterYears);
     });
+
   const { pathname } = useLocation();
   const dataPath = matchPath("/movie/:movieId", pathname);
 

@@ -2,17 +2,18 @@ import MovieSceneItem from "./MovieSceneItem";
 import "../styles/MovieSceneList.scss";
 
 function MovieSceneList(props) {
+  console.log(props.moviesData);
   const renderMovieSceneList = (props) => {
     if (props.moviesData.length === 0) {
       return (
-        <p>
-          No hay ninguna palabra que coincida con la palabra
+        <p className="list__mesagge">
+          No hay ninguna palabra que coincida con la palabra{" "}
           {props.searchNameValue}.
         </p>
       );
     } else if (props.moviesData.length === 0 && props.filterYears !== "") {
       return (
-        <p>
+        <p className="list__mesagge">
           No hay ninguna palabra que coincida con la palabra
           {props.searchNameValue} y el año {props.filterYears}.
         </p>
