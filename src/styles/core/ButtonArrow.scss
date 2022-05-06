@@ -1,0 +1,30 @@
+.arrow {
+  color: orangered;
+
+  animation: arrow 1s infinite;
+  transform-origin: center;
+  &:hover {
+    color: white;
+  }
+}
+
+.detail {
+  align-self: flex-start;
+  padding-left: 20px;
+}
+
+.notfoundarrow {
+  padding-top: 20px;
+}
+
+@keyframes arrow {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: none;
+  }
+}

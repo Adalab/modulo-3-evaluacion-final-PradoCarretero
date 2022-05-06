@@ -1,4 +1,4 @@
-import "../../styles/core/Button.scss";
+import "../../styles/core/ButtonPlay.scss";
 import PropTypes from "prop-types";
 
 function Button(props) {

@@ -1,22 +1,23 @@
-import { Link } from "react-router-dom";
 import "../styles/MovieSceneDetail.scss";
-import Button from "./core/Button";
+import ButtonPlay from "./core/ButtonPlay";
 import PropTypes from "prop-types";
+import ButtonArrow from "./core/ButtonArrow";
 
 function MovieSceneDetail(props) {
+  const { index, poster, movie, year, director, quote, audio } =
+    props.movieFound;
+
   return (
     <>
-      <section key={props.movieFound.index} className="detail__wrapper">
-        <Link to={"/"} className="detail__link">
-          <i className="fa-solid fa-arrow-left fa-2xl detail__icon"></i>
-        </Link>
-        <img className="detail__poster" src={props.movieFound.poster} alt="" />
+      <section key={index} className="detail__wrapper">
+        <ButtonArrow classLink="detail" />
+        <img className="detail__poster" src={poster} alt="" />
         <article className="detail__text">
-          <p>Nombre: {props.movieFound.movie}</p>
-          <p>Año: {props.movieFound.year}</p>
-          <p>Director: {props.movieFound.director}</p>
-          <p className="detail__quote">Frase: {props.movieFound.quote}</p>
-          <Button audio={props.movieFound.audio} />
+          <p>Nombre: {movie}</p>
+          <p>Año: {year}</p>
+          <p>Director: {director}</p>
+          <p className="detail__quote">Frase: {quote}</p>
+          <ButtonPlay audio={audio} />
         </article>
       </section>
     </>
