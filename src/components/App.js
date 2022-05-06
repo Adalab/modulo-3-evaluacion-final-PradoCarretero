@@ -102,7 +102,7 @@ function App() {
         />
         <Route
           path="/movie/:movieId"
-          element={<MovieSceneDetail movie={movieFound} />}
+          element={<MovieSceneDetail movieFound={movieFound} />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

@@ -1,5 +1,6 @@
 import MovieSceneItem from "./MovieSceneItem";
 import "../styles/MovieSceneList.scss";
+import PropTypes from "prop-types";
 
 function MovieSceneList(props) {
   const renderMovieSceneList = (props) => {
@@ -34,4 +35,14 @@ function MovieSceneList(props) {
 
   return <section>{renderMovieSceneList(props)}</section>;
 }
+MovieSceneList.defaultProps = {
+  movieFilters: [],
+  moviesData: [],
+  searchNameValue: "",
+};
+MovieSceneList.propTypes = {
+  moviesData: PropTypes.array.isRequired,
+  movieFilters: PropTypes.array,
+  searchNameValue: PropTypes.string,
+};
 export default MovieSceneList;

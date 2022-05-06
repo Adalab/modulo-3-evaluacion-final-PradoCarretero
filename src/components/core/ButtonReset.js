@@ -1,4 +1,5 @@
 import "../../styles/core/ButtonReset.scss";
+import PropTypes from "prop-types";
 
 function ButtonReset(props) {
   const handleClickBtn = () => {
@@ -10,4 +11,7 @@ function ButtonReset(props) {
     </button>
   );
 }
+ButtonReset.propTypes = {
+  handleReset: PropTypes.func.isRequired,
+};
 export default ButtonReset;

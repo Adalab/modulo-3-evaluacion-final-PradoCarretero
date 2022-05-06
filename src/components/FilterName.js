@@ -1,4 +1,5 @@
 import "../styles/FilterName.scss";
+import PropTypes from "prop-types";
 
 function FilterName(props) {
   const handleInputValue = (ev) => {
@@ -18,4 +19,11 @@ function FilterName(props) {
     </>
   );
 }
+
+FilterName.defaultProps = {
+  searchNameValue: "",
+};
+FilterName.propTypes = {
+  searchNameValue: PropTypes.string,
+};
 export default FilterName;

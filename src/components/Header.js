@@ -1,6 +1,7 @@
 import logo from "../images/logo.png";
 import "../styles/Header.scss";
 import Filters from "./Filters";
+import PropTypes from "prop-types";
 
 function Header(props) {
   const handleSubmit = (ev) => {
@@ -26,4 +27,18 @@ function Header(props) {
     </header>
   );
 }
+Header.defaultProps = {
+  filterYears: "",
+  movieFilters: [],
+  searchNameValue: "",
+};
+
+Header.propTypes = {
+  searchNameValue: PropTypes.string,
+  movieFilters: PropTypes.array,
+  filterYears: PropTypes.string,
+  handleReset: PropTypes.func.isRequired,
+  handleInputYear: PropTypes.func.isRequired,
+  handleInputName: PropTypes.func.isRequired,
+};
 export default Header;

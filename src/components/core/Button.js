@@ -1,10 +1,11 @@
 import "../../styles/core/Button.scss";
+import PropTypes from "prop-types";
 
 function Button(props) {
   return (
     <a
       className="button"
-      href={props.movie.audio}
+      href={props.audio}
       target="_blank"
       rel="noreferrer"
       title="Escucha la frase"
@@ -13,4 +14,10 @@ function Button(props) {
     </a>
   );
 }
+Button.defaultProps = {
+  audio: "",
+};
+Button.propTypes = {
+  audio: PropTypes.string.isRequired,
+};
 export default Button;

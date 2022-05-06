@@ -2,6 +2,7 @@
 
 Proyecto final personal en el módulo de React. Se trata de una aplicación sencilla que permite buscar entre las películas de Owen Wilson, las veces que ha pronunciado la paabra "wow". Además, puedes entrar en cada una de las películas listadas, para ver más detalles y escuchar la frase directamente. ¡Wow!¡Brillante!.
 
+![Página Owns](./src/images/Screenshot.png)
 ##Clona el repositorio
 Si quieres modificar o ver por dentro el código de la app, puedes hacer una copia en tu ordenador.
 
@@ -20,6 +21,10 @@ Entra en la carpeta que has clonado, Owen Wilson's WOW, desde tu terminal, y eje
 Y después:
 
          npm start
+
+De forma opcional puedes usar las prop-types:
+
+        npm install prop-types
 
 ##Lenguajes
 

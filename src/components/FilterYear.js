@@ -1,4 +1,6 @@
 import "../styles/FilterYear.scss";
+import PropTypes from "prop-types";
+
 function FilterYear(props) {
   const handleYearSelect = (ev) => {
     props.handleInputYear(ev.target.value);
@@ -30,4 +32,14 @@ function FilterYear(props) {
     </>
   );
 }
+FilterYear.defaultProps = {
+  filterYears: "",
+  movieFilters: [],
+};
+
+FilterYear.propTypes = {
+  movieFilters: PropTypes.array,
+  filterYears: PropTypes.string,
+  handleInputYear: PropTypes.func.isRequired,
+};
 export default FilterYear;

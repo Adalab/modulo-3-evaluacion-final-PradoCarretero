@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/MovieSceneItem.scss";
+import PropTypes from "prop-types";
 
 function MovieSceneItem(props) {
   return (
@@ -17,4 +18,10 @@ function MovieSceneItem(props) {
     </Link>
   );
 }
+MovieSceneItem.defaultProps = {
+  movie: {},
+};
+MovieSceneItem.propTypes = {
+  movie: PropTypes.object.isRequired,
+};
 export default MovieSceneItem;
