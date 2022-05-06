@@ -2,8 +2,10 @@ import "../styles/FilterName.scss";
 
 function FilterName(props) {
   const handleInputValue = (ev) => {
+    ev.preventDefault();
     props.handleInputName(ev.target.value);
   };
+
   return (
     <>
       <input
