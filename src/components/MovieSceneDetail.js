@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/MovieSceneDetail.scss";
+import Button from "./core/Button";
 
 function MovieSceneDetail(props) {
   return (
@@ -14,15 +15,7 @@ function MovieSceneDetail(props) {
           <p>Año: {props.movie.year}</p>
           <p>Director: {props.movie.director}</p>
           <p className="detail__quote">Frase: {props.movie.quote}</p>
-          <a
-            className="detail__button"
-            href={props.movie.audio}
-            target="_blank"
-            rel="noreferrer"
-            title="Escucha la frase"
-          >
-            Escucha la frase
-          </a>
+          <Button movie={props.movie} />
         </article>
       </section>
     </>

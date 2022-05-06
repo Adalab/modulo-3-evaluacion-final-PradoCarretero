@@ -55,6 +55,11 @@ function App() {
     setFilterYears(value);
   };
 
+  const handleReset = () => {
+    setSearchNameValue("");
+    setFilterYears("");
+  };
+
   const movieFilters = moviesData
     .filter((movie) => {
       return movie.movie.toLowerCase().includes(searchNameValue.toLowerCase());
@@ -84,11 +89,13 @@ function App() {
                 handleInputYear={handleInputYear}
                 filterYears={filterYears}
                 searchNameValue={searchNameValue}
+                handleReset={handleReset}
               />
               <MovieSceneList
-                moviesData={movieFilters}
+                movieFilters={movieFilters}
                 searchNameValue={searchNameValue}
                 filterYears={filterYears}
+                moviesData={moviesData}
               />
             </>
           }

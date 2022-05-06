@@ -1,6 +1,6 @@
-import "../styles/Filters.scss";
 import FilterName from "./FilterName";
 import FilterYear from "./FilterYear";
+import ButtonReset from "./core/ButtonReset";
 
 function Filters(props) {
   return (
@@ -14,6 +14,7 @@ function Filters(props) {
         handleInputYear={props.handleInputYear}
         filterYears={props.filterYears}
       />
+      <ButtonReset handleReset={props.handleReset} />
     </>
   );
 }

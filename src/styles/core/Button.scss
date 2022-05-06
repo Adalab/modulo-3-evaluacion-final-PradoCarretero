@@ -1,0 +1,10 @@
+.button {
+  background-color: orangered;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    background-color: white;
+    color: orangered;
+  }
+}

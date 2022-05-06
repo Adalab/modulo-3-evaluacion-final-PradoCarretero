@@ -6,12 +6,18 @@ function MovieSceneList(props) {
     if (props.moviesData.length === 0) {
       return (
         <p className="list__mesagge">
-          No hay ninguna película que coincida con la palabra{" "}
+          Cargando datos ... {props.searchNameValue}.
+        </p>
+      );
+    } else if (props.movieFilters.length === 0) {
+      return (
+        <p className="list__mesagge">
+          Upssssssss, no hay ninguna película que coincida con la palabra{" "}
           {props.searchNameValue}.
         </p>
       );
     } else {
-      const movieElements = props.moviesData.map((movie) => {
+      const movieElements = props.movieFilters.map((movie) => {
         return (
           <li key={movie.id} className="list__item">
             <MovieSceneItem movie={movie} />
