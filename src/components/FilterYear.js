@@ -7,8 +7,8 @@ function FilterYear(props) {
   };
   const getYears = () => {
     const movieYears = props.movieFilters.map((movie) => movie.year);
-    const uniqueYears = movieYears.filter((city, index) => {
-      return movieYears.indexOf(city) === index;
+    const uniqueYears = movieYears.filter((movie, index) => {
+      return movieYears.indexOf(movie) === index;
     });
     uniqueYears.sort();
     return uniqueYears;

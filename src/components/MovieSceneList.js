@@ -21,7 +21,12 @@ function MovieSceneList(props) {
       const movieElements = props.movieFilters.map((movie) => {
         return (
           <li key={movie.id} className="list__item">
-            <MovieSceneItem movie={movie} />
+            <MovieSceneItem
+              moviesData={props.moviesData}
+              movie={movie}
+              addListFavorite={props.addListFavorite}
+              favoriteList={props.favoriteList}
+            />
           </li>
         );
       });

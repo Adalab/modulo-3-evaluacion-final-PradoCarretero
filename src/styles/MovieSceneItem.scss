@@ -1,8 +1,6 @@
 .movie {
-  &__link {
-    text-decoration: none;
-    font-family: "Rubik", sans-serif;
-    color: white;
+  &__links {
+    align-self: flex-end;
   }
   &__poster {
     width: 140px;
@@ -12,17 +10,20 @@
     padding: 0px 5px;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    color: white;
     @media all and (min-width: 470px) {
-      height: 100px;
+      height: 120px;
     }
   }
   &__icon {
     color: orangered;
-    align-self: flex-end;
-    padding-top: 30px;
+    padding-left: 10px;
 
     &:hover {
       color: white;
+      cursor: pointer;
     }
     @media all and (min-width: 470px) {
       padding-top: 10px;

@@ -12,6 +12,7 @@ import MovieSceneList from "./MovieSceneList";
 import Header from "./Header";
 import MovieSceneDetail from "./MovieSceneDetail";
 import PageNotFound from "./PageNotFound";
+import Favorites from "./Favorites";
 
 function App() {
   const [moviesData, setMoviesData] = useState(ls.get("moviesData", []));
@@ -19,6 +20,7 @@ function App() {
     ls.get("searchNameValue", "")
   );
   const [filterYears, setFilterYears] = useState(ls.get("filterYears", ""));
+  const [favoriteList, setFavoriteList] = useState(ls.get("favoriteList", []));
 
   useEffect(() => {
     if (moviesData.length === 0) {
@@ -45,7 +47,8 @@ function App() {
     ls.set("moviesData", moviesData);
     ls.set("filterYears", filterYears);
     ls.set("searchNameValue", searchNameValue);
-  }, [moviesData, filterYears, searchNameValue]);
+    ls.set("favoriteList", favoriteList);
+  }, [moviesData, filterYears, searchNameValue, favoriteList]);
 
   const handleInputName = (value) => {
     setSearchNameValue(value);
@@ -58,6 +61,7 @@ function App() {
   const handleReset = () => {
     setSearchNameValue("");
     setFilterYears("");
+    setFavoriteList([]);
   };
 
   const movieFilters = moviesData
@@ -76,6 +80,26 @@ function App() {
   const movieId = dataPath !== null ? dataPath.params.movieId : null;
   const movieFound = moviesData.find((movie) => movie.id === parseInt(movieId));
 
+  const addListFavorite = (valueId, isFav) => {
+    const movieFoundFav = moviesData.find((movie) => movie.id === valueId);
+    if (isFav === true) {
+      console.log("te saco");
+      /*  movieFoundFav.favorite = false; */
+      console.log(movieFoundFav);
+      favoriteList.splice(movieFoundFav, 1);
+      console.log(favoriteList);
+    } else {
+      console.log("te meti");
+      /*  movieFoundFav.favorite = true; */
+      console.log(movieFoundFav);
+      console.log(movieFoundFav.length);
+      console.log(favoriteList.length);
+      /* setFavoriteList("maria");
+      setFavoriteList([...favoriteList, "maria"]); */
+      setFavoriteList([...favoriteList, movieFoundFav]);
+      console.log(favoriteList);
+    }
+  };
   return (
     <>
       <Routes>
@@ -96,6 +120,8 @@ function App() {
                 searchNameValue={searchNameValue}
                 filterYears={filterYears}
                 moviesData={moviesData}
+                addListFavorite={addListFavorite}
+                favoriteList={favoriteList}
               />
             </>
           }
@@ -103,6 +129,10 @@ function App() {
         <Route
           path="/movie/:movieId"
           element={<MovieSceneDetail movieFound={movieFound} />}
+        />
+        <Route
+          path="/favoritos"
+          element={<Favorites moviesData={favoriteList} />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

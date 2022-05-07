@@ -2,6 +2,7 @@ import FilterName from "./FilterName";
 import FilterYear from "./FilterYear";
 import ButtonReset from "./core/ButtonReset";
 import PropTypes from "prop-types";
+import ButtonFavorite from "./core/ButtonFavorite";
 
 function Filters(props) {
   return (
@@ -16,6 +17,7 @@ function Filters(props) {
         filterYears={props.filterYears}
       />
       <ButtonReset handleReset={props.handleReset} />
+      <ButtonFavorite />
     </>
   );
 }
